@@ -15,11 +15,14 @@ object LoginManagerModule {
 
     @AppMainScope
     @Provides
-    internal fun provideUserSessionPref(sharedPreferences: SharedPreferences, gson: Gson): UserSessionManager
-    = UserSessionPrefManagerImpl(sharedPreferences, gson)
+    internal fun provideUserSessionPref(
+        sharedPreferences: SharedPreferences,
+        gson: Gson
+    ): UserSessionManager = UserSessionPrefManagerImpl(sharedPreferences, gson)
 
     @AppMainScope
     @Provides
-    fun provideUserSessionPref(loginSessionManager: UserSessionManager) =  LoginRepository(loginSessionManager)
+    fun provideUserSessionPref(loginSessionManager: UserSessionManager) =
+        LoginRepository(loginSessionManager)
 
 }

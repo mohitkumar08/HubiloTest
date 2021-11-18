@@ -17,9 +17,17 @@ class LoginRepository @Inject constructor(private val loginSessionManager: UserS
         loginSessionManager.logout()
         return
     }
+
     fun isUserLogin(): Boolean {
         return loginSessionManager.isUserLogin()
     }
+
+    fun getUserId(): String {
+        return loginSessionManager.getLoginUserId()
+    }
+
+
+
 
 }
 
