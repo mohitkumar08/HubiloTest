@@ -1,2 +1,6 @@
 rootProject.name = "Splitwise"
 include ':app'
+include ':app:core'
+include ':app:database'
+include ':app:signin'
+include ':app:vmcore'

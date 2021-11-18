@@ -8,6 +8,7 @@ abstract class CoreActivity : AppCompatActivity() {
         setupActivityComponent()
         super.onCreate(savedInstanceState)
     }
+
     protected abstract fun setupActivityComponent()
 
 }

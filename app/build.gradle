@@ -36,6 +36,7 @@ android {
     }
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
 }
 
@@ -49,6 +50,7 @@ dependencies {
     implementation project(path: ':app:core')
     implementation project(path: ':app:signin')
     implementation project(path: ':app:vmcore')
+    implementation project(path: ':app:database')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -63,5 +65,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.9'
 
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
 }
