@@ -12,19 +12,14 @@ import dagger.Provides
 import javax.inject.Singleton
 
 const val PREFERENCE_KEY = "APP_PREF"
-
 @Module
 abstract class AppModule {
 
     @Binds
     abstract fun bindContext(application: Application): Context
 
-//    @Singleton
-//    @Provides
-//    fun provideContext(): Context = context.applicationContext
-//
-
     companion object {
+
         @Provides
         @Singleton
         fun provideMainHandler(): Handler = Handler(Looper.getMainLooper())
@@ -39,5 +34,4 @@ abstract class AppModule {
         @Singleton
         fun provideGSON(): Gson = Gson()
     }
-
 }

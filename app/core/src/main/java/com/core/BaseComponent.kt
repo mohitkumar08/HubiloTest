@@ -6,7 +6,6 @@ import android.content.SharedPreferences
 import android.os.Handler
 import com.core.di.module.AppModule
 import com.google.gson.Gson
-import com.vmcore.VMFactoryModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -22,9 +21,9 @@ interface BaseComponent {
         fun build(): BaseComponent
     }
 
-    fun requireContext():Context
-    fun requireHandler() :Handler
+    fun requireContext(): Context
+    fun requireHandler(): Handler
     fun requireSharedPrefManager(): SharedPreferences
-    fun requireGSON() :Gson
+    fun requireGSON(): Gson
 
 }
