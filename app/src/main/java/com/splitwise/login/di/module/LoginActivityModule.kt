@@ -10,10 +10,10 @@ import dagger.multibindings.IntoMap
 
 
 @Module(includes = [LoginManagerModule::class])
-abstract class LoginActivityModule{
+abstract class LoginActivityModule {
 
-        @Binds
-        @IntoMap
-        @ViewModelKey(LoginViewModel::class)
-        abstract fun userSessionViewModel(viewModel: LoginViewModel): ViewModel
+    @Binds
+    @IntoMap
+    @ViewModelKey(LoginViewModel::class)
+    abstract fun userSessionViewModel(viewModel: LoginViewModel): ViewModel
 }

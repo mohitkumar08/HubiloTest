@@ -2,11 +2,9 @@ package com.splitwise.login.ui
 
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import android.os.Bundle
-import androidx.annotation.StringRes
-import android.widget.Toast
 import com.core.BaseComponent
 import com.core.CoreActivity
 import com.splitwise.databinding.ActivityLoginBinding
@@ -26,11 +24,10 @@ class LoginActivity : CoreActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         loginViewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
-
         addObserver()
 
         binding.login.setOnClickListener {
-                loginViewModel.login(binding.username.text.toString(), binding.password.text.toString())
+            loginViewModel.login(binding.username.text.toString(), binding.password.text.toString())
         }
     }
 
@@ -41,7 +38,7 @@ class LoginActivity : CoreActivity() {
             .inject(this)
     }
 
-    private fun addObserver(){
+    private fun addObserver() {
         loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
             val loginState = it ?: return@Observer
 
@@ -54,15 +51,12 @@ class LoginActivity : CoreActivity() {
                 return@Observer
             }
 
+
         })
 
     }
 
-    private fun showLoginFailed(@StringRes errorString: Int) {
-        Toast.makeText(applicationContext, errorString, Toast.LENGTH_SHORT).show()
-    }
-
-    companion object{
+    companion object {
         fun getIntent(context: Context): Intent {
             return Intent(context, LoginActivity::class.java)
         }

@@ -1,15 +1,13 @@
 package com.splitwise.login.ui
 
+import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import android.util.Patterns
 import androidx.lifecycle.viewModelScope
 import com.signin.data.LoginRepository
 import com.splitwise.R
-
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -24,7 +22,7 @@ class LoginViewModel @Inject constructor() : ViewModel() {
     val loginFormState: LiveData<LoginState> = _loginForm
 
     fun login(username: String, password: String) {
-        viewModelScope.launch(Dispatchers.IO){
+        viewModelScope.launch(Dispatchers.IO) {
             if (isUserNameValid(username).not()) {
                 _loginForm.value = LoginState(usernameError = R.string.invalid_username)
             } else if (isPasswordValid(password).not()) {
