@@ -5,8 +5,6 @@ import com.core.di.scope.AppMainScope
 import com.signin.data.LoginRepository
 import com.splitwise.launcher.SplashActivity
 import com.splitwise.launcher.di.module.SplashActivityModule
-import com.splitwise.login.ui.LoginActivity
-import com.vmcore.VMFactoryModule
 import dagger.Component
 
 @AppMainScope

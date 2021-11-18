@@ -7,6 +7,7 @@ import com.core.CoreActivity
 import com.signin.data.LoginRepository
 import com.splitwise.launcher.di.component.DaggerSplashComponent
 import com.splitwise.login.ui.LoginActivity
+import com.splitwise.transactionlist.ui.TransactionListActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -18,10 +19,12 @@ class SplashActivity : CoreActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         lifecycleScope.launchWhenCreated {
-            launch(Dispatchers.IO){
-                if (loginRepository.isUserLogin()){
-
-                }else {
+            launch(Dispatchers.IO) {
+                if (loginRepository.isUserLogin()) {
+                    val userId = loginRepository.getUserId()
+                    startActivity(TransactionListActivity.getIntent(this@SplashActivity,userId))
+                    finish()
+                } else {
                     startActivity(LoginActivity.getIntent(this@SplashActivity))
                     finish()
                 }
