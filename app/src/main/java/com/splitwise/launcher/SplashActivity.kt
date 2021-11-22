@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class SplashActivity : CoreActivity() {
+
     @Inject
     lateinit var loginRepository: LoginRepository
 
@@ -30,9 +31,7 @@ class SplashActivity : CoreActivity() {
                 }
             }
         }
-
     }
-
     override fun setupActivityComponent() {
         DaggerSplashComponent.builder()
             .dependBaseComponent(applicationContext as BaseComponent)

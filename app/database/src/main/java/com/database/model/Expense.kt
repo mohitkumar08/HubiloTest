@@ -11,7 +11,7 @@ import java.util.*
 @Entity(tableName = "transaction_table")
 open class Expense(
     @ColumnInfo
-    var userId :String,
+    var userId :String = "",
 
     @ColumnInfo
     var amount :Double = 0.0,
